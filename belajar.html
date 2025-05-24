@@ -148,6 +148,18 @@ header p {
     }
   </style>
 </head>
+
+<script>
+  document.addEventListener("contextmenu", e => e.preventDefault()); // blok klik kanan
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0)))) {
+      return false;
+    }
+  };
+</script>
+
+
+
 <body>
 
 
@@ -159,7 +171,7 @@ header p {
   </header>
 
   <section class="link-container">
-    <a href="https://wa.me/6282211205645" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://chat.whatsapp.com/CGDKVyHkodz4qef1EcmjdN" target="_blank" class="link-card" data-aos="fade-up">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
       <span>Grup WhatsApp Belajar Nihongo</span>
     </a>
@@ -168,7 +180,7 @@ header p {
 
       <span>TikTok Video Jepang Harian</span>
     </a>
-    <a href="https://instagram.com/horizonnihongo" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://instagram.com/iqbal_syh_" target="_blank" class="link-card" data-aos="fade-up">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="IG">
       <span>Instagram Materi Visual Nihongo</span>
     </a>
