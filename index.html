@@ -1,344 +1,120 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toko Online IqbalzID | Official Horizon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Nihongo | Halaman Utama</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.modal-content {
-  background: white;
-  color: #000;
-  padding: 2rem;
-  border-radius: 15px;
-  max-width: 400px;
-  width: 90%;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #2a5298;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body {
-      background: #021d42;
-      color: #f5f9fa;
+      background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
     }
     header {
-      background: linear-gradient(90deg, #1e3c72, #2a5298, #5b8adb);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
     }
-    nav a {
-      margin: 0 12px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
+    .logo {
+      width: 100px;
       margin-bottom: 1rem;
     }
-    .produk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #00c6ff;
     }
-    .produk-card {
-      background: rgb(9, 189, 196);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    header p {
+      font-size: 1.2rem;
+      color: #d0e7ff;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
       padding: 1rem;
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      border-radius: 10px;
+      margin: 1rem auto;
+      max-width: 800px;
     }
-    .produk-card:hover {
-      transform: translateY(-10px);
+    nav a {
+      background: rgba(255,255,255,0.2);
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s;
     }
-    .produk-card img {
-      width: 100%;
-      border-radius: 15px;
+    nav a:hover {
+      background: #00c6ff;
+      color: #021d42;
+    }
+    .hero {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #cceeff;
+      line-height: 1.6;
     }
     footer {
       text-align: center;
-      background: #1e3c72;
-      color: white;
       padding: 2rem 1rem;
-      margin-top: 4rem;
-    }
-    .form-box {
-      background: rgb(9, 189, 196);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      max-width: 500px;
-      margin: auto;
-    }
-    input, textarea, button {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #2a5298;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: #1e3c72;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      font-size: 0.8rem;
-      background-color: #ffcc00;
-      border-radius: 8px;
-      margin-top: 5px;
+      font-size: 0.9rem;
+      color: #cccccc;
+      background: rgba(0,0,0,0.5);
+      margin-top: 3rem;
     }
   </style>
 </head>
-
-
-
-<script>
-  const dataPopup = {
-    "jasaEditAM": {
-      judul: "Jasa Edit Alight Motion [AM]",
-      daftar: [
-        "1-5 Detik - Rp 3.000",
-        "5-10 Detik - Rp 6.000",
-        "10-15 Detik - Rp 9.000",
-        "15-20 Detik - Rp 12.000",
-        "20-25 Detik - Rp 15.000",
-        "25-30 Detik - Rp 18.000"
-      ]
-    },
-    "premiumAM": {
-      judul: "Alight Motion [AM] Premium",
-      daftar: [
-        "1 Tahun [Email Sendiri] - Rp 10.000",
-        "1 Tahun [+ Email] - Rp 15.000",
-        "1 Tahun [Android] - Rp 20.000",
-        "1 Tahun [iOS] - Rp 25.000"
-      ]
-    }
-  };
-
-  function bukaPopup(id) {
-    const data = dataPopup[id];
-    if (!data) return;
-
-    document.getElementById('popupJudul').textContent = data.judul;
-    document.getElementById('popupDaftar').innerHTML = data.daftar.map(item => `<li>${item}</li>`).join('');
-    document.getElementById('popupModal').style.display = 'flex';
-  }
-
-  function tutupPopup() {
-    document.getElementById('popupModal').style.display = 'none';
-  }
-
-function beliSekarang() {
-  const judul = document.getElementById('popupJudul').textContent;
-  const daftar = Array.from(document.querySelectorAll('#popupDaftar li'))
-                      .map(li => li.textContent)
-                      .join('\n- ');
-
-  const pesan = `Halo kak, saya tertarik membeli produk:\n${judul}\n\nBerikut pilihannya:\n- ${daftar}`;
-  const wa = "6282211205645";
-  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(pesan)}`, '_blank');
-}
-
-  
-</script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const kirimBtn = document.querySelector('#chat button');
-    const textarea = document.querySelector('#chat textarea');
-
-    kirimBtn.addEventListener('click', function () {
-      const pesan = textarea.value.trim();
-
-      if (pesan === '') {
-        alert('Pesan tidak boleh kosong!');
-        return;
-      }
-
-      // Tampilkan loading di tombol
-      kirimBtn.disabled = true;
-      kirimBtn.textContent = 'Mengirim...';
-
-      const nomorAdmin = "6282211205645";
-      const encodedPesan = encodeURIComponent(pesan);
-      const waURL = `https://wa.me/${nomorAdmin}?text=${encodedPesan}`;
-
-      // Simulasi delay loading 1 detik biar lebih natural
-      setTimeout(() => {
-        window.open(waURL, '_blank');
-
-        // Reset tombol
-        kirimBtn.disabled = false;
-        kirimBtn.textContent = 'Kirim';
-        textarea.value = '';
-      }, 1000); // 1000ms = 1 detik
-    });
-  });
-</script>
-
 <body>
-  <!-- Popup Universal -->
-<div id="popupModal" style="display:none;" class="modal-overlay">
-  <div class="modal-content">
-    <h3 id="popupJudul"></h3>
-    <ul id="popupDaftar"></ul>
-    <button onclick="beliSekarang()">Beli Sekarang</button>
-    <button onclick="tutupPopup()">Tutup</button>
-  </div>
-</div>
-
-
   <header>
-    <h1><i class="fas fa-store"></i> Toko Online IqbalzID | Official Horizon</h1>
-    <nav>
-      <a href="#produk">Produk</a>
-      <a href="#pesanan">Pesanan</a>
-      <a href="#login">Login</a>
-      <a href="#pembayaran">Pembayaran</a>
-      <a href="#chat">Chat Admin</a>
-      <a href="#kontak">Kontak</a>
-      <a href="#bantuan">Bantuan</a>
-    </nav>
-  </header>  <section id="produk">
-    <h2>Daftar Produk</h2>
-    <div class="produk-grid">
-      <!-- Jasa Edit -->
-<div class="produk-card" onclick="bukaPopup('jasaEditAM')">
-  <img src="https://via.placeholder.com/250x150?text=Pulpen" alt="Jasa Edit">
-  <h3>Jasa Edit Alight Motion [AM]</h3>
-  <p>Mulai Dari Rp 3.000-18.000</p>
-  <span class="badge">Terlaris</span>
-</div>
+    <img src="https://i.ibb.co/k9z1rWx/japan-logo.png" alt="Horizon Nihongo Logo" class="logo">
+    <h1>Horizon Nihongo</h1>
+    <p>Selamat datang di portal belajar bahasa Jepang eksklusif & inspiratif!</p>
+  </header>
 
-<!-- AM Premium -->
-<div class="produk-card" onclick="bukaPopup('premiumAM')">
-  <img src="https://via.placeholder.com/250x150?text=Alight+Motion" alt="Alight Motion Premium">
-  <h3>Alight Motion [AM] Premium</h3>
-  <p>Mulai Dari 10.000-25.000</p>
-  <span class="badge">Terlaris</span>
-</div>
+  <nav>
+    <a href="belajar.html">📘 Belajar Nihongo</a>
+    <a href="produk.html">🛒 Toko / Produk</a>
+    <a href="tentang.html">🧭 Tentang Kami</a>
+    <a href="kontak.html">📞 Kontak</a>
+  </nav>
 
+  <section class="hero">
+    <h2>Belajar Bahasa Jepang Gaya Baru!</h2>
+    <p>
+      Horizon Nihongo hadir untuk menemani kamu mempelajari bahasa Jepang dari dasar hingga mahir.
+      Nikmati pengalaman belajar yang menyenangkan, eksklusif, dan penuh inspirasi.
+    </p>
+    <p>
+      📚 E-book | 🎥 Kelas Online | 🤖 Bot Latihan | 🎙️ Mentoring 1-on-1
+    </p>
+  </section>
 
-      <div class="produk-card">
-        <img src="https://via.placeholder.com/250x150?text=Jaket+Kulit" alt="Coding">
-        <h3>Jasa Edit/Pemograman, Script [Coding]</h3>
-        <p>Mulai Dari Rp 5.000-30.000</p>
-        <span class="badge">Terlaris</span>
-      </div>
-      <div class="produk-card">
-        <img src="https://via.placeholder.com/250x150?text=Sneaker" alt="Bot">
-        <h3>Sewa Bot/Jadi Bot</h3>
-        <p>Mulai Dari Rp 5.000-25.000</p>
-        <span class="badge">Terlaris</span>
-      </div>
-    </div>
-  </section>  <section id="pesanan">
-    <h2>Pesanan Anda</h2>
-    <p>Belum ada pesanan. Silakan pilih produk terlebih dahulu.</p>
-  </section>  <section id="login">
-    <h2>Login Pengguna</h2>
-    <div class="form-box">
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button>login</button>
-    </div>
-  </section>  <section id="pembayaran">
-    <h2>Pembayaran</h2>
-  <div class="produk-grid">
-    <div class="produk-card">
-    <img src="" alt="OVO">
-    <h3>OVO</h3>
-    <span class="badge">Payment With OVO</span>
-    </div>
-    <div class="produk-card">
-      <img src="" alt="DANA">
-      <h3>DANA</h3>
-      <span class="badge">Payment With DANA</span>
-        </div>
-        <div class="produk-card">
-          <img src="" alt="GOPAY">
-          <h3>GOPAY</h3>
-          <span class="badge">Payment With GOPAY</span>
-        </div>
-        <div class="produk-card">
-          <img src="" alt="QRIS">
-          <h3>QRIS</h3>
-          <span class="badge">Payment With QRIS</span>
-        </div>
-        </div>
-    <p>Pilih metode pembayaran yang tersedia setelah Anda melakukan pemesanan.</p>
-  </section>  <section id="chat">
-    <h2>Chat Admin</h2>
-    <div class="form-box">
-      <textarea placeholder="Tulis pesan ke admin..."></textarea>
-      <button>Kirim</button>
-    </div>
-  </section>  <section id="kontak">
-    <h2>Kontak Kami</h2>
-    <p>Email: iqbalsyahputra937@gmail.com | Telp/WA: 0822-1120-5645</p>
-  </section>  <section id="bantuan">
-    <h2>Pusat Bantuan</h2>
-    <p>Jika Anda mengalami kendala, hubungi kami melalui chat admin atau email.</p>
-  </section>  <footer>
-    <p>&copy; 2025 Toko Online IqbalzID | Official Horizon. All Rights Reserved.</p>
+  <footer>
+    &copy; 2025 Horizon Nihongo. Dibuat dengan semangat oleh Iqbal Syahputra.
   </footer>
 </body>
 </html>

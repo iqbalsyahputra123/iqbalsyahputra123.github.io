@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Belanja | Toko Online IqbalzID</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: #021d42;
+      color: #f5f9fa;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1e3c72, #2a5298, #5b8adb);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .produk-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .produk-card {
+      background: rgb(9, 189, 196);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .produk-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .produk-card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+      background-color: #ffcc00;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      background: #1e3c72;
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    /* --- Modal CSS --- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background: white;
+      color: black;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .modal-content button {
+      margin: 10px 5px;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #2a5298;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-store"></i> Toko Online IqbalzID</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="belanja.html">Belanja</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Semua Produk</h2>
+    <div class="produk-grid">
+      <div class="produk-card" onclick="bukaPopup('jasaEditAM')">
+        <img src="https://via.placeholder.com/250x150?text=Pulpen" alt="Jasa Edit">
+        <h3>Jasa Edit Alight Motion [AM]</h3>
+        <p>Mulai Dari Rp 3.000-18.000</p>
+        <span class="badge">Terlaris</span>
+      </div>
+
+      <div class="produk-card" onclick="bukaPopup('premiumAM')">
+        <img src="https://via.placeholder.com/250x150?text=Alight+Motion" alt="AM Premium">
+        <h3>Alight Motion [AM] Premium</h3>
+        <p>Mulai Dari 10.000-25.000</p>
+        <span class="badge">Terlaris</span>
+      </div>
+
+      <div class="produk-card" onclick="bukaPopup('coding')">
+        <img src="https://via.placeholder.com/250x150?text=Script" alt="Coding">
+        <h3>Jasa Coding & Script</h3>
+        <p>Mulai Dari Rp 5.000-30.000</p>
+        <span class="badge">Terlaris</span>
+      </div>
+
+      <div class="produk-card" onclick="bukaPopup('bot')">
+        <img src="https://via.placeholder.com/250x150?text=Bot" alt="Bot">
+        <h3>Sewa Bot/Jadi Bot</h3>
+        <p>Mulai Dari Rp 5.000-25.000</p>
+        <span class="badge">Terlaris</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Modal -->
+  <div id="popupModal" class="modal-overlay">
+    <div class="modal-content">
+      <h3 id="popupJudul">Judul Produk</h3>
+      <ul id="popupDaftar" style="text-align:left;"></ul>
+      <button onclick="beliSekarang()">Beli Sekarang</button>
+      <button onclick="tutupPopup()">Tutup</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Toko Online IqbalzID. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script PopUp -->
+  <script>
+    const dataPopup = {
+      jasaEditAM: {
+        judul: "Jasa Edit Alight Motion [AM]",
+        daftar: [
+          "1-5 Detik - Rp 3.000",
+          "5-10 Detik - Rp 6.000",
+          "10-15 Detik - Rp 9.000",
+          "15-20 Detik - Rp 12.000",
+          "20-25 Detik - Rp 15.000",
+          "25-30 Detik - Rp 18.000"
+        ]
+      },
+      premiumAM: {
+        judul: "Alight Motion [AM] Premium",
+        daftar: [
+          "1 Tahun [Email Sendiri] - Rp 10.000",
+          "1 Tahun [+ Email] - Rp 15.000",
+          "1 Tahun [Android] - Rp 20.000",
+          "1 Tahun [iOS] - Rp 25.000"
+        ]
+      },
+      coding: {
+        judul: "Jasa Coding & Script",
+        daftar: [
+          "Script Bot - Rp 10.000",
+          "Pasang Bot - Rp 15.000",
+          "Fix Bug - Rp 25.000"
+        ]
+      },
+      bot: {
+        judul: "Sewa Bot / Jadi Bot",
+        daftar: [
+          "1 Minggu - Rp 5.000",
+          "1 Bulan - Rp 15.000",
+          "1 Tahun - Rp 25.000"
+        ]
+      }
+    };
+
+    function bukaPopup(id) {
+      const data = dataPopup[id];
+      if (!data) return;
+      document.getElementById("popupJudul").textContent = data.judul;
+      document.getElementById("popupDaftar").innerHTML = data.daftar.map(item => `<li>${item}</li>`).join('');
+      document.getElementById("popupModal").style.display = "flex";
+    }
+
+    function tutupPopup() {
+      document.getElementById("popupModal").style.display = "none";
+    }
+
+    function beliSekarang() {
+      const judul = document.getElementById("popupJudul").textContent;
+      const daftar = Array.from(document.querySelectorAll("#popupDaftar li"))
+        .map(li => li.textContent)
+        .join('\n- ');
+      const pesan = `Halo kak, saya tertarik membeli produk:\n${judul}\n\nBerikut pilihannya:\n- ${daftar}`;
+      window.open(`https://wa.me/6282211205645?text=${encodeURIComponent(pesan)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
