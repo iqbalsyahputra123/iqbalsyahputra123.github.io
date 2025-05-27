@@ -6,7 +6,6 @@
   <title>Horizon Nihongo | Belajar Bahasa Jepang</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -15,12 +14,14 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background: url('https://img3.teletype.in/files/e8/2c/e82c3612-d9a0-44c1-85bd-cea9a589023f.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  background: url('https://img3.teletype.in/files/e8/2c/e82c3612-d9a0-44c1-85bd-cea9a589023f.jpeg') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
     header {
   background: linear-gradient(135deg, #ffffff10, #00c6ff20);
   backdrop-filter: blur(15px);
@@ -162,8 +163,23 @@ header p {
 
 <body>
 
+  <a href="index.html" style="
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 10px 20px;
+  background-color: #00c6ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+">
+  ⬅️ Kembali ke Menu Utama
+</a>
 
-  <header data-aos="fade-down">
+
+
+  <header>
     <img src="https://img1.teletype.in/files/81/96/819627ba-ab0c-4371-9d4e-03db36c55416.png" alt="Logo Horizon Nihongo" class="logo">
     <h1>Horizon Nihongo 🎌</h1>
     <p>Belajar Bahasa Jepang dari Dasar Bersama Iqbal Syahputra</p>
@@ -171,25 +187,25 @@ header p {
   </header>
 
   <section class="link-container">
-    <a href="https://chat.whatsapp.com/CGDKVyHkodz4qef1EcmjdN" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://chat.whatsapp.com/CGDKVyHkodz4qef1EcmjdN" target="_blank" class="link-card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
       <span>Grup WhatsApp Belajar Nihongo</span>
     </a>
-    <a href="https://tiktok.com/@horizonnihongo" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://tiktok.com/@horizonnihongo" target="_blank" class="link-card">
       <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" width="40">
 
       <span>TikTok Video Jepang Harian</span>
     </a>
-    <a href="https://instagram.com/iqbal_syh_" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://instagram.com/iqbal_syh_" target="_blank" class="link-card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="IG">
       <span>Instagram Materi Visual Nihongo</span>
     </a>
-    <a href="https://example.com/donasi" target="_blank" class="link-card" data-aos="fade-up">
+    <a href="https://example.com/donasi" target="_blank" class="link-card">
       <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Donasi" width="40">
 
       <span>Donasi & Request Materi</span>
     </a>
-    <a href="#" onclick="startHiraganaTest()" class="link-card" data-aos="fade-up">
+    <a href="#" onclick="startHiraganaTest()" class="link-card">
       <img src="https://cdn-icons-png.flaticon.com/512/5512/5512713.png" alt="Hiragana" width="40">
 
       <span>Test Hiragana Interaktif</span>
@@ -199,12 +215,12 @@ header p {
     
   </section>
 
-  <section class="kalender" data-aos="fade-up">
+  <section class="kalender">
     <h3>JADWAL BELAJAR MINGGU INI (COOMING SOON)</h3>
     <ul id="jadwalList"></ul>
   </section>
 
-  <section class="progress" data-aos="fade-up">
+  <section class="progress">
     <h3>KEMAJUAN BELAJAR KAMU</h3>
     <div class="progress-bar">
       <div class="progress-bar-inner">COOMING SOON</div>
@@ -215,18 +231,19 @@ header p {
     <iframe src="https://open.spotify.com/embed/track/5AznSm4o7qMimjokJUOmI4?utm_source=generator" width="100%" height="150" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </div>
+
+
   </section>
 
-  <h2 class="section-title" data-aos="fade-up">Konten Eksklusif Coming Soon</h2>
+  <h2 class="section-title">Konten Eksklusif Coming Soon</h2>
 
 
   <footer>
     <p>&copy; 2025 Horizon Nihongo. Dibuat oleh Iqbal Syahputra. Semua hak dilindungi.</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 300 });
+
 
     const quotes = [
       'Belajar bahasa adalah membuka dunia baru.',
