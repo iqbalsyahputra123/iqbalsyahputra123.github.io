@@ -1,132 +1,193 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon Nihongo | Halaman Utama</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>AERUZEON | Grow With Us</title>
+  <link rel="icon" href="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-  background: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
-  background-attachment: scroll;
-  background-size: cover;
-  color: white;
-  min-height: 100vh;
-}
-
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fbff;
+      color: #1c1c1c;
+    }
     header {
-      text-align: center;
+      background-color: #e3f2fd;
       padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-    }
-    .logo {
-      width: 100px;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #00c6ff;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #d0e7ff;
+      text-align: center;
+      position: relative;
     }
     nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 1rem auto;
-      max-width: 800px;
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
     }
     nav a {
-      background: rgba(233, 154, 6);
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
+      margin-left: 1.5rem;
       text-decoration: none;
-      color: white;
-      font-weight: 500;
-      transition: all 0.3s;
+      color: #1c1c1c;
+      font-weight: 600;
     }
-    nav a:hover {
-      background: #00c6ff;
-      color: #021d42;
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 5rem;
+      margin-bottom: 1rem;
+    }
+    .logo img {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.5rem;
     }
     .hero {
       max-width: 700px;
-      margin: 2rem auto;
-      background: rgb(233, 154, 6);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      backdrop-filter: blur(8px);
+      margin: 0 auto;
+      text-align: left;
+      margin-left: 10rem;
     }
-    .hero h2 {
-      font-size: 2rem;
+    .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #ffffff;
     }
     .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+      background-color: #1e88e5;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
       font-size: 1rem;
-      color: #cceeff;
-      line-height: 1.6;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .products {
+      padding: 3rem 1rem;
+      background-color: #fff;
+      text-align: center;
+    }
+    .products h2 {
+      margin-bottom: 2rem;
+    }
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+    .card h3 {
+      display: flex;
+      align-items: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .card h3 img {
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #444;
     }
     footer {
+      background-color: #e3f2fd;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1rem;
       font-size: 0.9rem;
-      color: #cccccc;
-      background: rgba(0,0,0,0.5);
-      margin-top: 3rem;
     }
+
+  .fixed-faq-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  .fixed-faq-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
   </style>
 </head>
+<body>
 
 <script>
-  document.addEventListener("contextmenu", e => e.preventDefault()); // blok klik kanan
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault(); // Blokir klik kanan
+  });
+
   document.onkeydown = function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0)))) {
-      return false;
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+      return false; // Blokir F12 dan Ctrl+Shift+I
     }
   };
 </script>
 
-
-<body>
   <header>
-    <img src="https://i.ibb.co/k9z1rWx/japan-logo.png" alt="Horizon Nihongo Logo" class="logo">
-    <h1>Horizon Nihongo</h1>
-    <p>Selamat datang di portal belajar bahasa Jepang eksklusif & inspiratif!</p>
+    <div class="logo">
+      <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="AERUZEON Logo">
+      <span><strong>AERUZEON</strong></span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="produk.html">Products</a>
+      <a href="belajar.html">Belajar</a>
+      <a href="login.html">Login / Signup</a>
+      <a href="tentangkami.html">Tentang Kami</a>
+    </nav>
+    <div class="hero">
+      <h1>Grow Your Business with Our Services</h1>
+      <p>We provide coding services, bot running services,<br>and premium apps services.</p>
+      <a href="#products" class="btn-primary">Get Started</a>
+    </div>
   </header>
 
-  <nav>
-    <a href="belajar.html">📘 Belajar Nihongo</a>
-    <a href="produk.html">🛒 Toko / Produk</a>
-    <a href="tentang.html">🧭 Tentang Kami</a>
-    <a href="kontak.html">📞 Kontak</a>
-  </nav>
-
-  <section class="hero">
-    <h2>Belajar Bahasa Jepang Gaya Baru!</h2>
-    <p>
-      Horizon Nihongo hadir untuk menemani kamu mempelajari bahasa Jepang dari dasar hingga mahir.
-      Nikmati pengalaman belajar yang menyenangkan, eksklusif, dan penuh inspirasi.
-    </p>
-    <p>
-      📚 E-book | 🎥 Kelas Online | 🤖 Bot Latihan | 🎙️ Mentoring 1-on-1
-    </p>
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="card">
+        <h3><img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Code">Coding Services</h3>
+        <p>Professional coding services for your business needs.</p>
+      </div>
+      <div class="card">
+        <h3><img src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png" alt="Bot">Bot Running Services</h3>
+        <p>Efficient bot running services to automate your tasks.</p>
+      </div>
+      <div class="card">
+        <h3><img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="Apps">Premium Apps</h3>
+        <p>High-quality premium applications tailored for you.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 Horizon Nihongo. Dibuat dengan oleh Iqbal Syahputra.
+    &copy; 2025 AERUZEON. Created By Iqbal Syahputra All rights reserved.
   </footer>
 </body>
+
+<a href="faq.html" class="fixed-faq-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
+</a>
+
 </html>

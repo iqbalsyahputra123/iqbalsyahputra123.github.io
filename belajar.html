@@ -1,300 +1,219 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Horizon Nihongo | Belajar Bahasa Jepang</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Nihongo | AERUZEON</title>
+  <link href="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" rel="icon">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
-    }
-    body {
-  background: url('https://img3.teletype.in/files/e8/2c/e82c3612-d9a0-44c1-85bd-cea9a589023f.jpeg') no-repeat center center;
-  background-size: cover;
-  background-attachment: scroll;
-  color: white;
-  min-height: 100vh;
-  overflow-x: hidden;
+    }body {
+  background-color: #f8fbff;
+  color: #1c1c1c;
 }
 
-    header {
-  background: linear-gradient(135deg, #ffffff10, #00c6ff20);
-  backdrop-filter: blur(15px);
-  padding: 2rem 1rem;
-  border-bottom: 1px solid #08b6e650;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+header {
+  background-color: #e3f2fd;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-header h1 {
-  font-size: 2.5rem;
+
+.logo {
+  display: flex;
+  align-items: center;
   font-weight: 600;
-  color: #00c6ff;
-}
-header p {
   font-size: 1.1rem;
-  color: #d0e7ff;
 }
 
-    .logo {
-      width: 100px;
-      margin: 0 auto 1rem;
-    }
-    
-    .music-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid #ccc;
-      padding: 8px 14px;
-      border-radius: 12px;
-      color: white;
-      cursor: pointer;
-      z-index: 9999;
-    }
-    .link-container {
-      max-width: 600px;
-      margin: 2rem auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-    }
-    .link-card {
-      display: flex;
-      align-items: center;
-      background: rgba(114, 4, 4, 0.521);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 1rem;
-      border-radius: 12px;
-      transition: 0.3s;
-      text-decoration: none;
-      color: rgb(243, 182, 16);
-      gap: 1rem;
-    }
-    .link-card:hover {
-      transform: scale(1.05);
-      background: rgba(255, 255, 255, 0.3);
-    }
-    .link-card img {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #cccccc;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .quote {
-      text-align: center;
-      font-style: italic;
-      margin-top: 1rem;
-      color: #aad6ff;
-    }
-    .section-title {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 1.8rem;
-      color: #00c6ff;
-    }
-    .kalender, .progress {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-    }
-    .kalender h3, .progress h3 {
-      margin-bottom: 1rem;
-      color: #ebcc21;
-    }
-    .kalender ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-    .kalender li {
-      margin-bottom: 8px;
-    }
-    .kalender li input {
-      width: 100%;
-      background: rgba(114, 4, 4, 0.521);
-      border: none;
-      border-radius: 5px;
-      color: white;
-      padding: 4px;
-    }
-    .progress-bar {
-      background: #ddd;
-      border-radius: 20px;
-      overflow: hidden;
-      margin-top: 1rem;
-    }
-    .progress-bar-inner {
-      width: 35%;
-      background: #00c6ff;
-      padding: 8px;
-      color: white;
-    }
+.logo img {
+  width: 28px;
+  margin-right: 0.5rem;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+  color: #1e88e5;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #1e88e5;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.materi {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.materi h2 {
+  margin-bottom: 1rem;
+  color: #0d47a1;
+}
+
+
+  .fixed-faq-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  .fixed-faq-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+
   </style>
 </head>
+<body>
 
 <script>
-  document.addEventListener("contextmenu", e => e.preventDefault()); // blok klik kanan
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault(); // Blokir klik kanan
+  });
+
   document.onkeydown = function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0)))) {
-      return false;
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+      return false; // Blokir F12 dan Ctrl+Shift+I
     }
   };
 </script>
 
-
-
-<body>
-
-  <a href="index.html" style="
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  padding: 10px 20px;
-  background-color: #00c6ff;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
-">
-  ⬅️ Kembali ke Menu Utama
-</a>
-
-
-
   <header>
-    <img src="https://img1.teletype.in/files/81/96/819627ba-ab0c-4371-9d4e-03db36c55416.png" alt="Logo Horizon Nihongo" class="logo">
-    <h1>Horizon Nihongo 🎌</h1>
-    <p>Belajar Bahasa Jepang dari Dasar Bersama Iqbal Syahputra</p>
-    <p class="quote">"Langit bukanlah batas, karena semangat kita lebih tinggi dari itu."</p>
-  </header>
-
-  <section class="link-container">
-    <a href="https://chat.whatsapp.com/CGDKVyHkodz4qef1EcmjdN" target="_blank" class="link-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
-      <span>Grup WhatsApp Belajar Nihongo</span>
-    </a>
-    <a href="https://tiktok.com/@horizonnihongo" target="_blank" class="link-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok" width="40">
-
-      <span>TikTok Video Jepang Harian</span>
-    </a>
-    <a href="https://instagram.com/iqbal_syh_" target="_blank" class="link-card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="IG">
-      <span>Instagram Materi Visual Nihongo</span>
-    </a>
-    <a href="https://example.com/donasi" target="_blank" class="link-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Donasi" width="40">
-
-      <span>Donasi & Request Materi</span>
-    </a>
-    <a href="#" onclick="startHiraganaTest()" class="link-card">
-      <img src="https://cdn-icons-png.flaticon.com/512/5512/5512713.png" alt="Hiragana" width="40">
-
-      <span>Test Hiragana Interaktif</span>
-    </a>
-
-
-    
-  </section>
-
-  <section class="kalender">
-    <h3>JADWAL BELAJAR MINGGU INI (COOMING SOON)</h3>
-    <ul id="jadwalList"></ul>
-  </section>
-
-  <section class="progress">
-    <h3>KEMAJUAN BELAJAR KAMU</h3>
-    <div class="progress-bar">
-      <div class="progress-bar-inner">COOMING SOON</div>
+    <div class="logo">
+      <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="Logo">
+      AERUZEON NIHONGO
     </div>
-    <div style="text-align: center; margin: 2rem auto;">
-  <p style="color: #ebcc21; font-weight: 500;">🎧 Musik Pengiring Belajar:</p>
-  <div style="max-width: 4000px; margin: auto; border-radius: 12px; overflow: hidden; box-shadow: 0 800px 800px rgba(0,0,0,0.3);">
-    <iframe src="https://open.spotify.com/embed/track/5AznSm4o7qMimjokJUOmI4?utm_source=generator" width="100%" height="150" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="belajar.html">Belajar</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>  <main>
+    <h1>Belajar Bahasa Jepang Bersama AERUZEON</h1>
+    <div class="cards">
+      <div class="card" onclick="tampilkanMateri(1)">
+        <h3>Materi 1: Hiragana</h3>
+        <p>Pelajari dasar-dasar huruf Hiragana.</p>
+      </div>
+      <div class="card" onclick="tampilkanMateri(2)">
+        <h3>Materi 2: Salam dan Perkenalan</h3>
+        <p>Cara menyapa & memperkenalkan diri dalam Nihongo.</p>
+      </div>
+      <div class="card" onclick="tampilkanMateri(3)">
+        <h3>Materi 3: Angka dan Hitungan</h3>
+        <p>Mengenal angka, bilangan, dan cara menghitung.</p>
+      </div>
+    </div><div class="materi" id="materiBox">
+  <h2 id="judulMateri"></h2>
+  <div id="isiMateri"></div>
 </div>
 
+  </main>  <script>
+    const materiData = {
+      1: {
+        judul: "Materi 1: Hiragana",
+        isi: ` <strong>Hiragana</strong> adalah salah satu dari tiga sistem penulisan Jepang. Huruf ini biasanya digunakan untuk menulis kata-kata asli Jepang dan partikel tata bahasa.<br><br>
+    <strong>Baris A:</strong><br>
+    あ (a), い (i), う (u), え (e), お (o)<br><br>
+    <strong>Contoh Kata:</strong><br>
+    - あい (ai) = cinta<br>
+    - うえ (ue) = atas<br><br>
+    Hiragana digunakan bersama Kanji dan Katakana dalam penulisan sehari-hari.`},
+      2: {
+        judul: "Materi 2: Salam dan Perkenalan",
+        isi: `<strong>Salam Umum dalam Bahasa Jepang:</strong><br>
+    - おはようございます (Ohayou gozaimasu) = Selamat pagi (formal)<br>
+    - こんにちは (Konnichiwa) = Selamat siang<br>
+    - こんばんは (Konbanwa) = Selamat malam<br>
+    - さようなら (Sayounara) = Selamat tinggal<br><br>
+    <strong>Perkenalan:</strong><br>
+    - はじめまして (Hajimemashite) = Salam kenal<br>
+    - わたしは [nama] です (Watashi wa [nama] desu) = Nama saya [nama]<br>
+    - よろしくおねがいします (Yoroshiku onegaishimasu) = Mohon kerja samanya / Senang berkenalan`},
+      3: {
+        judul: "Materi 3: Angka dan Hitungan",
+        isi: ` <strong>Angka dasar dalam bahasa Jepang:</strong><br>
+    1 = 一 (いち - ichi)<br>
+    2 = 二 (に - ni)<br>
+    3 = 三 (さん - san)<br>
+    4 = 四 (し / よん - shi / yon)<br>
+    5 = 五 (ご - go)<br>
+    6 = 六 (ろく - roku)<br>
+    7 = 七 (しち / なな - shichi / nana)<br>
+    8 = 八 (はち - hachi)<br>
+    9 = 九 (きゅう - kyuu)<br>
+    10 = 十 (じゅう - juu)<br><br>
+    <strong>Contoh:</strong><br>
+    - 21 = にじゅういち (nijuuichi)<br>
+    - 100 = ひゃく (hyaku)<br>
+    - 1.000 = せん (sen)`
+      }
+    };
 
-  </section>
+    function tampilkanMateri(id) {
+      const box = document.getElementById("materiBox");
+      const judul = document.getElementById("judulMateri");
+      const isi = document.getElementById("isiMateri");
 
-  <h2 class="section-title">Konten Eksklusif Coming Soon</h2>
-
-
-  <footer>
-    <p>&copy; 2025 Horizon Nihongo. Dibuat oleh Iqbal Syahputra. Semua hak dilindungi.</p>
-  </footer>
-
-  <script>
-
-
-    const quotes = [
-      'Belajar bahasa adalah membuka dunia baru.',
-      'Jepang itu keren, tapi kamu lebih keren karena belajar.',
-      'Setiap huruf hiragana, satu langkah lebih dekat ke impianmu.',
-      'Kalau anime pakai subtitle, kamu bisa lebih dari itu.',
-      'Jangan menyerah, "ganbatte" artinya semangat!'
-    ];
-    document.querySelector('.quote').innerText = quotes[Math.floor(Math.random() * quotes.length)];
-
-    function toggleMusic() {
-      const bgm = document.getElementById('bgm');
-      const status = document.getElementById('musicStatus');
-      bgm.muted = !bgm.muted;
-      status.innerText = bgm.muted ? '🔇 Musik Mati' : '🔊 Musik Aktif';
+      if (materiData[id]) {
+        box.style.display = "block";
+        judul.textContent = materiData[id].judul;
+        isi.innerHTML = materiData[id].isi;
+        box.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-
-    const jadwalKey = 'jadwalBelajar';
-    const defaultJadwal = [
-      "Senin - Hiragana a-i-u-e-o",
-      "Selasa - Salam & Perkenalan",
-      "Rabu - Kata Benda Harian",
-      "Kamis - Angka & Hari",
-      "Jumat - Latihan Dialog"
-    ];
-    const jadwalList = document.getElementById('jadwalList');
-
-    function loadJadwal() {
-      let jadwal = JSON.parse(localStorage.getItem(jadwalKey)) || defaultJadwal;
-      jadwalList.innerHTML = '';
-      jadwal.forEach((item, index) => {
-        const li = document.createElement('li');
-        const input = document.createElement('input');
-        input.value = item;
-        input.onchange = () => saveJadwal(index, input.value);
-        li.appendChild(input);
-        jadwalList.appendChild(li);
-      });
-    }
-
-    function saveJadwal(index, value) {
-      let jadwal = JSON.parse(localStorage.getItem(jadwalKey)) || defaultJadwal;
-      jadwal[index] = value;
-      localStorage.setItem(jadwalKey, JSON.stringify(jadwal));
-    }
-
-    function startHiraganaTest() {
-      alert("Fitur tes Hiragana akan hadir di update selanjutnya!");
-    }
-
-    loadJadwal();
-  </script>
-</body>
+  </script></body>
+  <a href="faq.html" class="fixed-faq-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
+</a>
 </html>

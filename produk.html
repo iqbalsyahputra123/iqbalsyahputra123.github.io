@@ -1,270 +1,307 @@
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Belanja | Toko Online IqbalzID</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AERUZEON | Produk Digital</title>
+  <link href="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" rel="icon">
   <style>
-    body {
-      background: #021d42;
-      color: #f5f9fa;
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
-    }
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background-color: #f1f5f9;
+  color: #1c1c1c;
+}
 
-    header {
-      background: linear-gradient(90deg, #1e3c72, #2a5298, #5b8adb);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
+header {
+  background-color: #e3f2fd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
 
-    nav a {
-      margin: 0 12px;
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
 
-    nav a:hover {
-      color: #ffcc00;
-    }
+.logo img {
+  width: 28px;
+  margin-right: 0.5rem;
+}
 
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 500;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-    .produk-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
-    .produk-card {
-      background: rgb(9, 189, 196);
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
 
-    .produk-card:hover {
-      transform: translateY(-10px);
-    }
+.produk-item {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
 
-    .produk-card img {
-      width: 100%;
-      border-radius: 15px;
-    }
+.produk-item:hover {
+  transform: translateY(-5px);
+}
 
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      font-size: 0.8rem;
-      background-color: #ffcc00;
-      border-radius: 8px;
-      margin-top: 5px;
-    }
+.produk-item img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
 
-    footer {
-      text-align: center;
-      background: #1e3c72;
-      color: white;
-      padding: 2rem 1rem;
-      margin-top: 4rem;
-    }
+.produk-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
 
-    /* --- Modal CSS --- */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
+.produk-item p {
+  font-size: 0.88rem;
+  color: #444;
+}
 
-    .modal-content {
-      background: white;
-      color: black;
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      text-align: center;
-    }
+footer {
+  background-color: #e3f2fd;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
 
-    .modal-content button {
-      margin: 10px 5px;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      background: #2a5298;
-      color: white;
-      font-weight: bold;
-    }
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  background-color: #1e88e5;
+  color: white;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+  .fixed-faq-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  .fixed-faq-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+
   </style>
 </head>
+<body>
 
 <script>
-  document.addEventListener("contextmenu", e => e.preventDefault()); // blok klik kanan
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault(); // Blokir klik kanan
+  });
+
   document.onkeydown = function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0)))) {
-      return false;
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+      return false; // Blokir F12 dan Ctrl+Shift+I
     }
   };
 </script>
 
 
-<body>
+<script>
+  function tampilkanPopup(judul, isi) {
+    document.getElementById('popupTitle').textContent = judul;
+    document.getElementById('popupContent').innerHTML = isi;
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function tutupPopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Materi khusus Video Editing
+
+const hargacoding = `
+Script Bot - Rp 10.000<br>
+Edit Script Bot - Rp 15.000<br>
+Fix Bug SC [Tergantung Kerusakan] - Rp 25.000 - 100.000<br>
+`;
+
+const hargapremium = `
+<div>
+    <strong>Akun Premium:</strong><br>
+    <strong>Alight Motion</strong><br>
+    <ul>
+    <li>1 Tahun [Email Sendiri] - Rp 10.000<br></li>
+          <li>1 Tahun [+ Email] - Rp 15.000<br></li>
+          <li>1 Tahun [Android] - Rp 20.000<br></li>
+          <li>1 Tahun [iOS] - Rp 25.000<br></li>
+          </ul>
+    <strong>Spotify</strong> - Rp 50.000 / bulan<br>
+    <strong>YouTube Premium</strong> - Rp 60.000 / bulan<br>
+    <strong>CapCut</strong> - Rp 45.000 / bulan<br>
+    <strong>Netflix</strong> - Rp 150.000 / bulan<br>
+    <strong>Disney+</strong> - Rp 120.000 / bulan<br>
+    <strong>Apple Music</strong> - Rp 75.000 / bulan<br>
+    <strong>Amazon Prime</strong> - Rp 100.000 / bulan<br>
+    
+    <strong>Selebihnya:</strong><br>
+    <ul>
+      <li>Akun Premium lainnya bisa diminta sesuai kebutuhan.</li>
+      <li>Harganya bervariasi berdasarkan layanan dan fitur tambahan.</li>
+    </ul>
+  </div>
+`;
+
+  const hargaVideo = `  
+  <strong>[PRESET]</strong><br>
+    1-5 Detik - Rp 3.000<br>
+    5-10 Detik - Rp 6.000<br>
+    10-15 Detik - Rp 9.000<br>
+    15-20 Detik - Rp 12.000<br>
+    20-25 Detik - Rp 15.000<br>
+    25-30 Detik - Rp 18.000<br><br>
+    <strong>[EDIT DARI NOL]</strong><br>
+    1-5 Detik - Rp 5.000<br>
+    5-10 Detik - Rp 10.000<br>
+    10-15 Detik - Rp 15.000<br>
+    15-20 Detik - Rp 20.000<br>
+    20-25 Detik - Rp 25.000<br>
+    25-30 Detik - Rp 30.000
+  `;
+
+const hargasewabot = `
+1 Minggu - Rp 5.000<br>
+          Sewa Bot 1 Bulan - Rp 20.000<br>
+          Jadi Bot 1 Bulan - Rp 25.000 - 80.000<br>
+          Sewa Bot 1 Tahun - [COOMING SOON]<br>
+          `;
+
+</script>
 
   <header>
-    <h1><i class="fas fa-store"></i> Toko Online IqbalzID</h1>
+    <div class="logo">
+      <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="Logo">
+      AERUZEON
+    </div>
     <nav>
-      <a href="index.html">Beranda</a>
-      <a href="belanja.html">Belanja</a>
-      <a href="#">Kontak</a>
+      <a href="index.html">Home</a>
+      <a href="produk.html">Produk</a>
+      <a href="login.html">Login</a>
     </nav>
-  </header>
-
-  <section>
-    <h2>Semua Produk</h2>
+  </header>  <main>
+    <h1>Produk Digital Kami</h1>
     <div class="produk-grid">
-      <div class="produk-card" onclick="bukaPopup('jasaEditAM')">
-        <img src="https://via.placeholder.com/250x150?text=Pulpen" alt="Jasa Edit">
-        <h3>Jasa Edit Alight Motion [AM]</h3>
-        <p>Mulai Dari Rp 3.000-30.000</p>
-        <span class="badge">Terlaris</span>
+
+<div class="produk-item" onclick="tampilkanPopup('Video Editing', hargaVideo)">
+  <img src="https://cdn-icons-png.flaticon.com/512/5460/5460820.png" alt="Editing">
+  <h3>Video Editing</h3>
+  <p>Jasa edit video sesuai durasi dan tingkat kesulitan.</p>
+</div>
+
+      <div class="produk-item" onclick="tampilkanPopup('Coding Services', hargacoding)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Coding">
+        <h3>Coding Services</h3>
+        <p>Jasa coding untuk kebutuhan website & aplikasi Anda.</p>
       </div>
 
-      <div class="produk-card" onclick="bukaPopup('premiumAM')">
-        <img src="https://via.placeholder.com/250x150?text=Alight+Motion" alt="AM Premium">
-        <h3>Alight Motion [AM] Premium</h3>
-        <p>Mulai Dari 10.000-25.000</p>
-        <span class="badge">Terlaris</span>
+      <div class="produk-item" onclick="tampilkanPopup('Bot Running Services', hargasewabot)">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712107.png" alt="Bot">
+        <h3>Sewa Bot / Bot Running Services</h3>
+        <p>Jadi Bot / Hosting dan otomasi bot untuk efisiensi kerja Dan Keperluan Pribadi.</p>
       </div>
-
-      <div class="produk-card" onclick="bukaPopup('coding')">
-        <img src="https://via.placeholder.com/250x150?text=Script" alt="Coding">
-        <h3>Jasa Coding & Script</h3>
-        <p>Mulai Dari Rp 5.000-30.000</p>
-        <span class="badge">Terlaris</span>
-      </div>
-
-      <div class="produk-card" onclick="bukaPopup('bot')">
-        <img src="https://via.placeholder.com/250x150?text=Bot" alt="Bot">
-        <h3>Sewa Bot/Jadi Bot</h3>
-        <p>Mulai Dari Rp 5.000-25.000</p>
-        <span class="badge">Terlaris</span>
+      <div class="produk-item" onclick="tampilkanPopup('Premium Apps', hargapremium)">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="App">
+        <h3>Account / Premium Apps</h3>
+        <p>Account / Aplikasi eksklusif yang dirancang sesuai kebutuhan.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Popup Modal -->
-  <div id="popupModal" class="modal-overlay">
-    <div class="modal-content">
-      <h3 id="popupJudul">Judul Produk</h3>
-      <ul id="popupDaftar" style="text-align:left;"></ul>
-      <button onclick="beliSekarang()">Beli Sekarang</button>
-      <button onclick="tutupPopup()">Tutup</button>
-    </div>
+  </main>
+  
+  
+  
+  <div class="modal" id="popup">
+  <div class="modal-content">
+    <h2 id="popupTitle"></h2>
+    <p id="popupContent"></p>
+    <button class="close-btn" onclick="tutupPopup()">Tutup</button>
+    <a href="https://wa.me/6282211205645?text=Saya%20tertarik%20untuk%20membeli%20[produk]" target="_blank">
+      <button class="close-btn" style="background-color: #00aeff;">Beli Sekarang</button>
+    </a>
   </div>
-
+</div>  
+  
   <footer>
-    <p>&copy; 2025 Toko Online IqbalzID. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Script PopUp -->
-  <script>
-    const dataPopup = {
-      jasaEditAM: {
-        judul: "Jasa Edit Alight Motion [AM]",
-        daftar: [
-          "[PRESET]",
-          "1-5 Detik - Rp 3.000",
-          "5-10 Detik - Rp 6.000",
-          "10-15 Detik - Rp 9.000",
-          "15-20 Detik - Rp 12.000",
-          "20-25 Detik - Rp 15.000",
-          "25-30 Detik - Rp 18.000",
-          "[EDIT DARI NOL]",
-          "1-5 Detik - Rp 5.000",
-          "5-10 Detik - Rp 10.000",
-          "10-15 Detik - Rp 15.000",
-          "15-20 Detik - Rp 20.000",
-          "20-25 Detik - Rp 25.000",
-          "25-30 Detik - Rp 30.000"
-        ]
-      },
-      premiumAM: {
-        judul: "Alight Motion [AM] Premium",
-        daftar: [
-          "1 Tahun [Email Sendiri] - Rp 10.000",
-          "1 Tahun [+ Email] - Rp 15.000",
-          "1 Tahun [Android] - Rp 20.000",
-          "1 Tahun [iOS] - Rp 25.000"
-        ]
-      },
-      coding: {
-        judul: "Jasa Coding & Script",
-        daftar: [
-          "Script Bot - Rp 10.000",
-          "Edit Script Bot - Rp 15.000",
-          "Fix Bug [Tergantung Kerusakan] - Rp 25.000"
-        ]
-      },
-      bot: {
-        judul: "Sewa Bot / Jadi Bot",
-        daftar: [
-          "1 Minggu - Rp 5.000",
-          "1 Bulan - Rp 20.000",
-          "1 Tahun - [COOMING SOON]"
-        ]
-      }
-    };
-
-    function bukaPopup(id) {
-      const data = dataPopup[id];
-      if (!data) return;
-      document.getElementById("popupJudul").textContent = data.judul;
-      document.getElementById("popupDaftar").innerHTML = data.daftar.map(item => `<li>${item}</li>`).join('');
-      document.getElementById("popupModal").style.display = "flex";
-    }
+    &copy; 2025 AERUZEON. All rights reserved.
+  </footer>  <script>
+    function tampilkanPopup(judul, isi) {
+  document.getElementById('popupTitle').textContent = judul;
+  document.getElementById('popupContent').innerHTML = ''; // Reset konten popup
+  const div = document.createElement('div');
+  div.innerHTML = isi; // Isi popup dengan HTML yang bersih
+  document.getElementById('popupContent').appendChild(div); // Masukkan ke popup
+  document.getElementById('popup').style.display = 'flex';
+}
 
     function tutupPopup() {
-      document.getElementById("popupModal").style.display = "none";
+      document.getElementById('popup').style.display = 'none';
     }
-
-    function beliSekarang() {
-      const judul = document.getElementById("popupJudul").textContent;
-      const daftar = Array.from(document.querySelectorAll("#popupDaftar li"))
-        .map(li => li.textContent)
-        .join('\n- ');
-      const pesan = `Halo kak, saya tertarik membeli produk:\n${judul}\n\nBerikut pilihannya:\n- ${daftar}`;
-      window.open(`https://wa.me/6282211205645?text=${encodeURIComponent(pesan)}`, '_blank');
-    }
-  </script>
-</body>
+  </script></body>
+  <a href="faq.html" class="fixed-faq-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
+</a>
 </html>

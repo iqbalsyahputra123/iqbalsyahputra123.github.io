@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | AERUZEON</title>
+  <link href="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" rel="icon">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #e3f2fd;
+      padding: 1rem 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+    header a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 500;
+    }
+    .signup-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      margin-top: 4rem;
+    }
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .btn {
+      width: 100%;
+      padding: 0.6rem;
+      background-color: #1e88e5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .login-link a {
+      color: #1e88e5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+
+  .fixed-faq-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+
+  .fixed-faq-button img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+
+  </style>
+</head>
+<body>
+
+<script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault(); // Blokir klik kanan
+  });
+
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+      return false; // Blokir F12 dan Ctrl+Shift+I
+    }
+  };
+</script>
+
+  <header>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </header>  <div class="signup-container">
+    <h2>Daftar Akun Baru</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <button type="submit" class="btn">Daftar</button>
+      <div class="error" id="errorMsg"></div>
+    </form>
+    <div class="login-link">
+      Sudah punya akun? <a href="login.html">Login di sini</a>
+    </div>
+  </div>  <script>
+    document.getElementById("signupForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errorMsg.textContent = "Format email tidak valid.";
+        return;
+      }
+
+      try {
+        const response = await fetch("data/users.json");
+        const users = await response.json();
+
+        const userExists = users.some(u => u.email === email);
+
+        if (userExists) {
+          errorMsg.textContent = "Email sudah terdaftar.";
+          return;
+        }
+
+        errorMsg.style.color = 'green';
+        errorMsg.textContent = "Pendaftaran berhasil (simulasi)! Silakan login.";
+      } catch (err) {
+        errorMsg.textContent = "Gagal memproses pendaftaran.";
+        console.error(err);
+      }
+    });
+  </script></body>
+  <a href="faq.html" class="fixed-faq-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
+</a>
+</html>
