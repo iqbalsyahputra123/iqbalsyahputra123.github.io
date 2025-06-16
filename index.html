@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,19 +18,11 @@
     header {
       background-color: #e3f2fd;
       padding: 2rem 1rem;
-      text-align: center;
-      position: relative;
-    }
-    nav {
-      position: absolute;
-      top: 1rem;
-      right: 2rem;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #1c1c1c;
-      font-weight: 600;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo {
       display: flex;
@@ -44,6 +35,17 @@
       width: 32px;
       height: 32px;
       margin-right: 0.5rem;
+    }
+    nav {
+      position: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 600;
     }
     .hero {
       max-width: 700px;
@@ -114,37 +116,99 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    .fixed-faq-button {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+    .fixed-faq-button img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }/* Sidebar Style */
+.menu-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
 
-  .fixed-faq-button {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 999;
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #e3f2fd;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  padding-top: 4rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  padding: 1rem;
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
   }
 
-  .fixed-faq-button img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+  header nav {
+    display: none;
   }
+}
 
   </style>
 </head>
 <body>
+  <script>
+    document.addEventListener("contextmenu", function(e) {
+      e.preventDefault();
+    });
+    document.onkeydown = function(e) {
+      if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
+        return false;
+      }
+    };
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("show");
+    }window.addEventListener("click", function (e) {
+  const sidebar = document.getElementById("sidebar");
+  const button = document.querySelector(".menu-button");
+  if (!sidebar.contains(e.target) && !button.contains(e.target)) {
+    sidebar.classList.remove("show");
+  }
+});
 
-<script>
-  document.addEventListener("contextmenu", function(e) {
-    e.preventDefault(); // Blokir klik kanan
-  });
-
-  document.onkeydown = function(e) {
-    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) {
-      return false; // Blokir F12 dan Ctrl+Shift+I
-    }
-  };
-</script>
-
-  <header>
+  </script>  <!-- Sidebar Menu -->  <div class="sidebar" id="sidebar">
+    <a href="index.html">Home</a>
+    <a href="produk.html">Products</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="login.html">Login / Signup</a>
+    <a href="tentangkami.html">Tentang Kami</a>
+  </div>
+  <button class="menu-button" onclick="toggleSidebar()">☰</button>  <header>
     <div class="logo">
       <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="AERUZEON Logo">
       <span><strong>AERUZEON</strong></span>
@@ -161,9 +225,7 @@
       <p>We provide coding services, bot running services,<br>and premium apps services.</p>
       <a href="#products" class="btn-primary">Get Started</a>
     </div>
-  </header>
-
-  <section id="products" class="products">
+  </header>  <section id="products" class="products">
     <h2>Our Products</h2>
     <div class="product-grid">
       <div class="card">
@@ -179,15 +241,10 @@
         <p>High-quality premium applications tailored for you.</p>
       </div>
     </div>
-  </section>
-
-  <footer>
-    &copy; 2025 AERUZEON. Created By Iqbal Syahputra All rights reserved.
-  </footer>
+  </section>  <footer>
+    &copy; 2025 AERUZEON. Created By Iqbal Syahputra. All rights reserved.
+  </footer>  <a href="faq.html" class="fixed-faq-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
+  </a>
 </body>
-
-<a href="faq.html" class="fixed-faq-button">
-  <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
-</a>
-
 </html>
