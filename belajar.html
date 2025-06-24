@@ -5,117 +5,71 @@
   <title>Belajar Nihongo | AERUZEON</title>
   <link href="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" rel="icon">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }body {
-  background-color: #f8fbff;
-  color: #1c1c1c;
-}
-
-header {
-  background-color: #e3f2fd;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.logo img {
-  width: 28px;
-  margin-right: 0.5rem;
-}
-
-nav a {
-  margin-left: 1rem;
-  text-decoration: none;
-  color: #1c1c1c;
-  font-weight: 500;
-}
-
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-h1 {
-  text-align: center;
-  color: #1e88e5;
-  margin-bottom: 2rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  padding: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-  color: #1e88e5;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.materi {
-  display: none;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.materi h2 {
-  margin-bottom: 1rem;
-  color: #0d47a1;
-}
-
-
-  .fixed-faq-button {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 999;
-  }
-
-  .fixed-faq-button img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
-
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: linear-gradient(to right, #f8fbff, #e3f2fd); color: #1c1c1c; }
+    header {
+      background-color: #e3f2fd;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .logo { display: flex; align-items: center; font-weight: 600; font-size: 1.1rem; }
+    .logo img { width: 28px; margin-right: 0.5rem; }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: #1c1c1c;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    nav a:hover { background-color: #bbdefb; }
+    main {
+      max-width: 1080px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      text-align: center;
+      color: #1e88e5;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border-left: 5px solid #1e88e5;
+    }
+    .card:hover { transform: translateY(-6px); background-color: #f1f8ff; }
+    .card h3 { margin-bottom: 0.5rem; color: #1565c0; font-size: 1.1rem; }
+    .card p { font-size: 0.95rem; color: #444; }
+    .materi {
+      display: none;
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .materi h2 { margin-bottom: 1rem; color: #0d47a1; }
+    .materi-content { line-height: 1.7; font-size: 1rem; color: #333; }
+    .fixed-faq-button { position: fixed; bottom: 1rem; right: 1rem; z-index: 999; }
+    .fixed-faq-button img { width: 50px; height: 50px; cursor: pointer; }
   </style>
 </head>
 <body>
-
 <script>
   document.addEventListener("contextmenu", function(e) {
     e.preventDefault(); // Blokir klik kanan
@@ -128,92 +82,109 @@ h1 {
   };
 </script>
 
-  <header>
-    <div class="logo">
-      <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="Logo">
-      AERUZEON NIHONGO
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="belajar.html">Belajar</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>  <main>
-    <h1>Belajar Bahasa Jepang Bersama AERUZEON</h1>
-    <div class="cards">
-      <div class="card" onclick="tampilkanMateri(1)">
-        <h3>Materi 1: Hiragana</h3>
-        <p>Pelajari dasar-dasar huruf Hiragana.</p>
-      </div>
-      <div class="card" onclick="tampilkanMateri(2)">
-        <h3>Materi 2: Salam dan Perkenalan</h3>
-        <p>Cara menyapa & memperkenalkan diri dalam Nihongo.</p>
-      </div>
-      <div class="card" onclick="tampilkanMateri(3)">
-        <h3>Materi 3: Angka dan Hitungan</h3>
-        <p>Mengenal angka, bilangan, dan cara menghitung.</p>
-      </div>
-    </div><div class="materi" id="materiBox">
-  <h2 id="judulMateri"></h2>
-  <div id="isiMateri"></div>
-</div>
-
-  </main>  <script>
-    const materiData = {
-      1: {
-        judul: "Materi 1: Hiragana",
-        isi: ` <strong>Hiragana</strong> adalah salah satu dari tiga sistem penulisan Jepang. Huruf ini biasanya digunakan untuk menulis kata-kata asli Jepang dan partikel tata bahasa.<br><br>
-    <strong>Baris A:</strong><br>
-    あ (a), い (i), う (u), え (e), お (o)<br><br>
-    <strong>Contoh Kata:</strong><br>
-    - あい (ai) = cinta<br>
-    - うえ (ue) = atas<br><br>
-    Hiragana digunakan bersama Kanji dan Katakana dalam penulisan sehari-hari.`},
-      2: {
-        judul: "Materi 2: Salam dan Perkenalan",
-        isi: `<strong>Salam Umum dalam Bahasa Jepang:</strong><br>
-    - おはようございます (Ohayou gozaimasu) = Selamat pagi (formal)<br>
-    - こんにちは (Konnichiwa) = Selamat siang<br>
-    - こんばんは (Konbanwa) = Selamat malam<br>
-    - さようなら (Sayounara) = Selamat tinggal<br><br>
-    <strong>Perkenalan:</strong><br>
-    - はじめまして (Hajimemashite) = Salam kenal<br>
-    - わたしは [nama] です (Watashi wa [nama] desu) = Nama saya [nama]<br>
-    - よろしくおねがいします (Yoroshiku onegaishimasu) = Mohon kerja samanya / Senang berkenalan`},
-      3: {
-        judul: "Materi 3: Angka dan Hitungan",
-        isi: ` <strong>Angka dasar dalam bahasa Jepang:</strong><br>
-    1 = 一 (いち - ichi)<br>
-    2 = 二 (に - ni)<br>
-    3 = 三 (さん - san)<br>
-    4 = 四 (し / よん - shi / yon)<br>
-    5 = 五 (ご - go)<br>
-    6 = 六 (ろく - roku)<br>
-    7 = 七 (しち / なな - shichi / nana)<br>
-    8 = 八 (はち - hachi)<br>
-    9 = 九 (きゅう - kyuu)<br>
-    10 = 十 (じゅう - juu)<br><br>
-    <strong>Contoh:</strong><br>
-    - 21 = にじゅういち (nijuuichi)<br>
-    - 100 = ひゃく (hyaku)<br>
-    - 1.000 = せん (sen)`
-      }
-    };
-
-    function tampilkanMateri(id) {
-      const box = document.getElementById("materiBox");
-      const judul = document.getElementById("judulMateri");
-      const isi = document.getElementById("isiMateri");
-
-      if (materiData[id]) {
-        box.style.display = "block";
-        judul.textContent = materiData[id].judul;
-        isi.innerHTML = materiData[id].isi;
-        box.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  </script></body>
-  <a href="faq.html" class="fixed-faq-button">
+<script>
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0))) return false;
+  };
+</script><header>
+  <div class="logo">
+    <img src="https://img2.teletype.in/files/d3/1d/d31deaa5-8294-443e-b9b2-08432a70b7bc.png" alt="Logo">
+    AERUZEON NIHONGO
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header><main>
+  <h1>Belajar Bahasa Jepang Lengkap</h1>
+  <div class="cards" id="cardContainer"></div>
+  <div class="materi" id="materiBox">
+    <h2 id="judulMateri"></h2>
+    <div id="isiMateri" class="materi-content"></div>
+  </div>
+</main><a href="faq.html" class="fixed-faq-button">
   <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="FAQ">
-</a>
+</a><script>
+  const materiData = [
+    {
+      judul: "1. Hiragana Lengkap",
+      deskripsi: "Pelajari semua karakter Hiragana.",
+      isi: `Hiragana digunakan untuk menulis kata asli dalam bahasa Jepang. Total ada 46 karakter dasar:<br><br>
+      あ(a), い(i), う(u), え(e), お(o)<br>
+      か(ka), き(ki), く(ku), け(ke), こ(ko)<br>
+      さ(sa), し(shi), す(su), せ(se), そ(so)<br>
+      た(ta), ち(chi), つ(tsu), て(te), と(to)<br>
+      な(na), に(ni), ぬ(nu), ね(ne), の(no)<br>
+      は(ha), ひ(hi), ふ(fu), へ(he), ほ(ho)<br>
+      ま(ma), み(mi), む(mu), め(me), も(mo)<br>
+      や(ya), ゆ(yu), よ(yo)<br>
+      ら(ra), り(ri), る(ru), れ(re), ろ(ro)<br>
+      わ(wa), を(wo), ん(n)`
+    },
+    {
+      judul: "2. Katakana Lengkap",
+      deskripsi: "Karakter Katakana untuk kata asing.",
+      isi: `Digunakan untuk kata serapan: コンピュータ (kompyu-ta = komputer), テレビ (terebi = televisi), コーヒー (ko-hi- = kopi)... Total 46 karakter juga.`
+    },
+    {
+      judul: "3. Perkenalan Diri",
+      deskripsi: "Cara memperkenalkan diri dalam bahasa Jepang.",
+      isi: `はじめまして。わたしは イチロウ です。よろしくおねがいします。<br><br>
+      (Hajimemashite. Watashi wa Ichirou desu. Yoroshiku onegaishimasu.)`
+    },
+    {
+      judul: "4. Pola Kalimat Dasar",
+      deskripsi: "Struktur kalimat dasar.",
+      isi: `Polanya: Subjek + Objek + Kata Kerja<br>
+      Contoh: わたし は パン を たべます (Saya makan roti)`
+    },
+    {
+      judul: "5. Partikel Penting",
+      deskripsi: "Peran partikel dalam kalimat Jepang.",
+      isi: `は (wa) = penanda topik, を (wo) = penanda objek, に (ni) = arah/waktu, で (de) = tempat melakukan tindakan.`
+    },
+    {
+      judul: "6. Kosakata Sehari-hari",
+      deskripsi: "Kata penting yang sering digunakan.",
+      isi: `ありがとう (arigatou) = terima kasih<br>
+      おねがいします (onegaishimasu) = tolong<br>
+      ごめんなさい (gomennasai) = maaf<br>
+      はい (hai) = iya, いいえ (iie) = tidak`
+    },
+    {
+      judul: "7. Angka Jepang",
+      deskripsi: "Hitungan dari 1 sampai 100.",
+      isi: `1 = いち, 2 = に, 3 = さん, 4 = よん, 5 = ご, 6 = ろく, 7 = なな, 8 = はち, 9 = きゅう, 10 = じゅう...` 
+    },
+    {
+      judul: "8. Kata Kerja Dasar",
+      deskripsi: "Daftar kata kerja umum.",
+      isi: `たべる = makan, のむ = minum, いく = pergi, みる = melihat, かく = menulis, よむ = membaca.`
+    }
+  ];
+
+  function tampilkanMateri(id) {
+    const box = document.getElementById("materiBox");
+    const judul = document.getElementById("judulMateri");
+    const isi = document.getElementById("isiMateri");
+    const data = materiData[id];
+    if (data) {
+      box.style.display = "block";
+      judul.textContent = data.judul;
+      isi.innerHTML = data.isi;
+      box.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  const cardContainer = document.getElementById("cardContainer");
+  materiData.forEach((materi, index) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.onclick = () => tampilkanMateri(index);
+    card.innerHTML = `<h3>${materi.judul}</h3><p>${materi.deskripsi}</p>`;
+    cardContainer.appendChild(card);
+  });
+</script></body>
 </html>
